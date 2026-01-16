@@ -1,9 +1,10 @@
+import HeroBanner from "@/Components/HeroBanner/HeroBanner";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <div>hello</div>
+    <div className="">
+      <HeroBanner></HeroBanner>
     </div>
   );
 }

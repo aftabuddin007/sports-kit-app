@@ -1,75 +1,79 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
-
-const navLinks = [
-  { name: "Home", path: "/" },
-  { name: "Products", path: "/about" },
-  { name: "Login", path: "/services" },
-];
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import React from 'react';
 
 const Navbar = () => {
   const pathname = usePathname();
-  const [open, setOpen] = useState(false);
+
+  const navLinkClass = (path) =>
+    pathname === path
+      ? 'text-[#f5bf42] underline font-bold'
+      : 'hover:text-[#f5bf42] hover:underline';
 
   return (
-    <nav className="bg-white shadow-md fixed top-0 left-0 w-full z-50">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link href="/" className="text-xl font-bold text-blue-600">
-            SportsKit
-          </Link>
-
-          {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                href={link.path}
-                className={`font-medium transition ${
-                  pathname === link.path
-                    ? "text-blue-600 border-b-2 border-blue-600"
-                    : "text-gray-600 hover:text-blue-600"
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
+   <div className="bg-base-100">
+     <div className="navbar  shadow-sm max-w-7xl mx-auto">
+      {/* Left */}
+      <div className="navbar-start">
+        <div className="dropdown">
+          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
           </div>
 
-          {/* Mobile Button */}
-          <button
-            className="md:hidden text-gray-700 text-2xl"
-            onClick={() => setOpen(!open)}
-          >
-            ☰
-          </button>
+          <ul className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow">
+            <li>
+              <Link href="/" className={navLinkClass('/')}>Home</Link>
+            </li>
+            <li>
+              <Link href="/products" className={navLinkClass('/products')}>
+                Products
+              </Link>
+            </li>
+          </ul>
         </div>
+
+        <Link href="/" className="btn btn-ghost text-xl">
+          daisyUI
+        </Link>
       </div>
 
-      {/* Mobile Menu */}
-      {open && (
-        <div className="md:hidden bg-white shadow-md">
-          {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              href={link.path}
-              onClick={() => setOpen(false)}
-              className={`block px-6 py-3 border-b ${
-                pathname === link.path
-                  ? "text-blue-600 font-semibold bg-blue-50"
-                  : "text-gray-700"
-              }`}
-            >
-              {link.name}
+      {/* Center */}
+      <div className="navbar-center hidden lg:flex">
+        <ul className="menu menu-horizontal px-1">
+          <li>
+            <Link href="/" className={navLinkClass('/')}>Home</Link>
+          </li>
+          <li>
+            <Link href="/products" className={navLinkClass('/products')}>
+              Products
             </Link>
-          ))}
-        </div>
-      )}
-    </nav>
+          </li>
+        </ul>
+      </div>
+
+      {/* Right */}
+      <div className="navbar-end">
+        <Link href="/login" className={navLinkClass('/login')}>
+          Login
+        </Link>
+      </div>
+    </div>
+   </div>
   );
 };
 
