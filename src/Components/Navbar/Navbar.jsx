@@ -1,10 +1,13 @@
 'use client';
 
+import { signIn, signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';
 
 const Navbar = () => {
+    const { data: session,status } = useSession()
+    console.log(session)
   const pathname = usePathname();
 
   const navLinkClass = (path) =>
@@ -44,6 +47,14 @@ const Navbar = () => {
                 Products
               </Link>
             </li>
+            {session && <>
+             <li>
+              <Link href="/addProduct" className={navLinkClass('/addProduct')}>
+               Add Product
+              </Link>
+            </li>
+
+            </>}
           </ul>
         </div>
 
@@ -63,14 +74,27 @@ const Navbar = () => {
               Products
             </Link>
           </li>
+          {session && <>
+             <li>
+              <Link href="/addProduct" className={navLinkClass('/addProduct')}>
+               Add Product
+              </Link>
+            </li>
+
+            </>}
         </ul>
       </div>
 
       {/* Right */}
       <div className="navbar-end">
-        <Link href="/login" className='btn btn-outline btn-primary'>
-          Login
-        </Link>
+        
+      {session?( <button onClick={()=>signOut()} className='btn  btn-primary'>
+          LogOut
+        </button>):
+        <button onClick={()=>signIn()} className='btn btn-outline btn-primary'>
+        Login
+      </button>}
+       
       </div>
     </div>
    </div>

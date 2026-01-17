@@ -1,7 +1,9 @@
+'use client'; 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/Components/Footer/Footer";
 import Navbar from "@/Components/Navbar/Navbar";
+import NextAuthProvider from "@/provider/NextAuthProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,13 +15,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
-  title: "Sports Kit Store App",
-  description: "Selling items like football, bat, ball, leg pad, boots, gloves, etc",
-};
+ 
 
 export default function RootLayout({ children }) {
   return (
+    <NextAuthProvider>
+
+    
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -32,5 +34,6 @@ export default function RootLayout({ children }) {
         <Footer></Footer>
       </body>
     </html>
+    </NextAuthProvider>
   );
 }
