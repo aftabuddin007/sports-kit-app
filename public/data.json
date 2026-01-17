@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "name": "Professional Football Jersey",
+    "brand": "SportPro",
+    "category": "Football",
+    "images": "https://images.pexels.com/photos/3621104/pexels-photo-3621104.jpeg",
+    "price": 49.99,
+    "rating": 4,
+    "stock": "In Stock",
+    "shortDescription": "High-quality breathable football jersey to keep you cool during intense matches."
+  },
+  {
+    "id": 2,
+    "name": "Cricket Bat & Gloves Set",
+    "brand": "ProCricket",
+    "category": "Cricket",
+    "images": "https://images.pexels.com/photos/163403/cricket-bat.jpeg",
+    "price": 79.99,
+    "rating": 5,
+    "stock": "In Stock",
+    "shortDescription": "Premium cricket bat and gloves set designed for maximum control and comfort."
+  },
+  {
+    "id": 3,
+    "name": "Gym Training Kit",
+    "brand": "FitGear",
+    "category": "Gym",
+    "images": "https://images.pexels.com/photos/3757951/gym-training.jpeg",
+    "price": 59.99,
+    "rating": 4,
+    "stock": "In Stock",
+    "shortDescription": "Complete gym kit including weights, gloves, and resistance bands for all levels."
+  },
+  {
+    "id": 4,
+    "name": "Basketball Shoes",
+    "brand": "AirHoop",
+    "category": "Basketball",
+    "images": "https://images.pexels.com/photos/2529148/basketball-shoes.jpeg",
+    "price": 89.99,
+    "rating": 5,
+    "stock": "In Stock",
+    "shortDescription": "High-performance basketball shoes with ankle support and shock absorption."
+  },
+  {
+    "id": 5,
+    "name": "Running Sneakers",
+    "brand": "FastTrack",
+    "category": "Running",
+    "images": "https://images.pexels.com/photos/19090/pexels-photo.jpg",
+    "price": 69.99,
+    "rating": 4,
+    "stock": "In Stock",
+    "shortDescription": "Lightweight running sneakers for maximum speed and comfort."
+  },
+  {
+    "id": 6,
+    "name": "Yoga Mat",
+    "brand": "ZenFit",
+    "category": "Yoga",
+    "images": "https://images.pexels.com/photos/3823039/pexels-photo-3823039.jpeg",
+    "price": 29.99,
+    "rating": 4,
+    "stock": "In Stock",
+    "shortDescription": "Eco-friendly, non-slip yoga mat for daily practice."
+  },
+  {
+    "id": 7,
+    "name": "Football Boots",
+    "brand": "GoalMaster",
+    "category": "Football",
+    "images": "https://images.pexels.com/photos/325873/pexels-photo-325873.jpeg",
+    "price": 99.99,
+    "rating": 5,
+    "stock": "In Stock",
+    "shortDescription": "Professional football boots with extra grip and comfort."
+  },
+  {
+    "id": 8,
+    "name": "Cricket Helmet",
+    "brand": "ProCricket",
+    "category": "Cricket",
+    "images": "https://images.pexels.com/photos/163404/pexels-photo-163404.jpeg",
+    "price": 59.99,
+    "rating": 4,
+    "stock": "In Stock",
+    "shortDescription": "Durable cricket helmet to ensure maximum protection during matches."
+  },
+  {
+    "id": 9,
+    "name": "Gym Dumbbell Set",
+    "brand": "FitGear",
+    "category": "Gym",
+    "images": "https://images.pexels.com/photos/414029/pexels-photo-414029.jpeg",
+    "price": 49.99,
+    "rating": 5,
+    "stock": "In Stock",
+    "shortDescription": "Adjustable dumbbell set for full body strength training."
+  },
+  {
+    "id": 10,
+    "name": "Basketball Jersey",
+    "brand": "AirHoop",
+    "category": "Basketball",
+    "images": "https://images.pexels.com/photos/2529150/pexels-photo-2529150.jpeg",
+    "price": 39.99,
+    "rating": 4,
+    "stock": "In Stock",
+    "shortDescription": "Breathable basketball jersey designed for comfort and agility on the court."
+  }
+]

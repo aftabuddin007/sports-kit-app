@@ -68,7 +68,7 @@ const Navbar = () => {
 
       {/* Right */}
       <div className="navbar-end">
-        <Link href="/login" className={navLinkClass('/login')}>
+        <Link href="/login" className='btn btn-outline btn-primary'>
           Login
         </Link>
       </div>
