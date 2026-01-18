@@ -1,10 +1,11 @@
 import ProductCard from '@/card/ProductCard';
 import React from 'react';
 const getAllProduct = async ()=>{
-    const res = await fetch('http://localhost:3000/data.json');
+    // const res = await fetch('http://localhost:3000/data.json');
+    const res = await fetch('http://localhost:3000/api/addProduct');
 
   const data = await res.json();
-  return data;
+  return data.addProd;
 };
 
 const Products = async() => {
@@ -16,7 +17,7 @@ const Products = async() => {
             <h2 className="text-3xl font bold text-center py-10">All products</h2>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 px-3  gap-6 mb-6'>
                 {
-                    item.map((product)=><ProductCard product={product} key={product.id}></ProductCard>)
+                    item.map((product)=><ProductCard product={product} key={product._id}></ProductCard>)
                 }
             </div>
         </div>

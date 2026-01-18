@@ -22,6 +22,9 @@ export const authOptions = {
     async authorize(credentials, req) {
     
     console.log(credentials,'credentials')
+
+
+    
       // Return null if user data could not be retrieved
       if(user){
         return user;
@@ -32,6 +35,23 @@ export const authOptions = {
   })
     // ...add more providers here
   ],
+
+callbacks: {
+  async redirect({ url, baseUrl }) {
+    // If relative URL
+    if (url.startsWith("/products")) {
+      return `${baseUrl}${url}`
+    }
+
+    // If same origin
+    if (new URL(url).origin === baseUrl) {
+      return url
+    }
+
+    // Default fallback
+    return baseUrl
+  },
+}
 }
 
 

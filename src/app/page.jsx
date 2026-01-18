@@ -1,3 +1,4 @@
+import CategorySection from "@/Components/Category/Category";
 import HeroBanner from "@/Components/HeroBanner/HeroBanner";
 import NewsletterCTA from "@/Components/NewsLetterCTA/NewsLetterCTA";
 import WhyChooseUs from "@/Components/WhyChoose/WhyChoose";
@@ -11,6 +12,7 @@ export default function Home() {
   return (
     <div className="">
       <HeroBanner></HeroBanner>
+      <CategorySection></CategorySection>
       <WhyChooseUs></WhyChooseUs>
       <NewsletterCTA></NewsletterCTA>
     </div>

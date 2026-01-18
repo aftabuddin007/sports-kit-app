@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🏀 SportsKit – Sports Equipment E-Commerce App
 
-## Getting Started
+SportsKit is a modern sports equipment e-commerce web application built using **Next.js (App Router)** and **React**.  
+The app focuses on providing a clean, fast, and responsive user experience with a **dark theme UI** and dynamic product pages.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🔗 Live Links
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- 🌐 **Live Site:** https://your-live-site.vercel.app  
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## 📖 Project Overview
 
-To learn more about Next.js, take a look at the following resources:
+SportsKit allows users to browse and explore various sports-related products such as football kits, gym equipment, basketball gear, cricket items, and more.  
+Users can view all products, browse by category, and see detailed information for each product through dynamic routing.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## ⚙️ Tech Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Next.js 14+ (App Router)**
+- **React**
+- **Tailwind CSS**
+- **Framer Motion**
+- **Swiper.js**
+- **React Icons**
+- **JavaScript (ES6+)**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+---
+
+## 🚀 Features
+
+- Responsive **dark theme UI**
+- Sports category based product listing
+- Dynamic product details page
+- Reusable Product Card component
+- Client & Server component separation
+- Smooth animations & transitions
+- SEO-friendly routing with Next.js
+
+---
+
+## 🧩 Feature Details
+
+### 🛍 Product Listing Page (`/products`)
+- Displays all available sports products
+- Uses reusable `ProductCard` component
+- Shows product image, name, brand, price, rating, and stock status
+- Includes “View Details” navigation button
+
+---
+
+### 📄 Product Details Page (`/products/[id]`)
+- Dynamic route based on product ID
+- Displays detailed product information:
+  - Product image
+  - Brand & category
+  - Rating stars
+  - Price
+  - Stock status
+  - Short description
+- Ready for cart integration
+
+---
+
+### 🗂 Category Section
+- Dedicated category UI for sports types
+- Helps users quickly find products
+- Dark themed with hover & animation effects
+
+---
+
+### 🎯 Hero Banner
+- Auto sliding banner using Swiper.js
+- Manual navigation buttons
+- Sports-focused content & CTA buttons
+- Smooth fade animations
+
+---
+
+### 📩 Newsletter / CTA Section
+- Email subscription UI
+- Call-to-action for user engagement
+- Dark theme compatible design
+
+
+

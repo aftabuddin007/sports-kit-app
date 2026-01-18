@@ -1,10 +1,10 @@
 import React from 'react';
 
 const getSingleProd = async (id)=>{
-    const res = await fetch(`http://localhost:3000/data.json`);
+    const res = await fetch(`http://localhost:3000/api/addProduct`);
 
   const data = await res.json();
-  const product = data.find((i)=>i.id === id)
+  const product = data.addProd.find((i)=>i.id === id)
   
   return product
 
@@ -17,7 +17,7 @@ const product  =await getSingleProd(parseInt(id))
 // console.log( id,items)
     return (
         <div>
-            <h2 className="text-2xl">Product details for {product.name}</h2>
+            <h2 className="text-2xl text-center my-4">Product details for {product.name}</h2>
            <div className="">
 <div className="flex items-center justify-center min-h-screen bg-neutral-950 p-6">
       <div className="max-w-4xl w-full bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row">

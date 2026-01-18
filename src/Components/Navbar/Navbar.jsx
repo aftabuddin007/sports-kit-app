@@ -2,18 +2,32 @@
 
 import { signIn, signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const Navbar = () => {
     const { data: session,status } = useSession()
     console.log(session)
   const pathname = usePathname();
-
+const router = useRouter();
   const navLinkClass = (path) =>
     pathname === path
       ? 'text-[#f5bf42] underline font-bold'
       : 'hover:text-[#f5bf42] hover:underline';
+
+
+     
+
+const handleLogout = async () => {
+  toast.info("Logged out");
+
+  await signOut({
+    redirect: false,
+  });
+
+  window.location.href = "/";
+};
 
   return (
    <div className="bg-base-100">
@@ -59,7 +73,7 @@ const Navbar = () => {
         </div>
 
         <Link href="/" className="btn btn-ghost text-xl">
-          daisyUI
+          SportsKit
         </Link>
       </div>
 
@@ -88,7 +102,7 @@ const Navbar = () => {
       {/* Right */}
       <div className="navbar-end">
         
-      {session?( <button onClick={()=>signOut()} className='btn  btn-primary'>
+      {session?( <button onClick={handleLogout} className='btn  btn-primary'>
           LogOut
         </button>):
         <button onClick={()=>signIn()} className='btn btn-outline btn-primary'>
