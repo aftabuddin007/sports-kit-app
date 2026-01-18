@@ -7,9 +7,10 @@ const user = {
     email:'aaa@gmail.com',
     password:'1234'
 }
+
 export const authOptions = {
 
-    
+    secret:process.env.NEXTAUTH_SECRET,
   // Configure one or more authentication providers
   providers: [
     CredentialsProvider({
@@ -36,22 +37,19 @@ export const authOptions = {
     // ...add more providers here
   ],
 
-callbacks: {
-  async redirect({ url, baseUrl }) {
-    // If relative URL
-    if (url.startsWith("/products")) {
-      return `${baseUrl}${url}`
-    }
-
-    // If same origin
-    if (new URL(url).origin === baseUrl) {
-      return url
-    }
-
-    // Default fallback
-    return baseUrl
+ callbacks: {
+    async redirect({ url, baseUrl }) {
+      if (url.startsWith("/")) {
+        return `${baseUrl}${url}`
+      }
+      if (url.startsWith(baseUrl)) {
+        return url
+      }
+      return baseUrl
+    },
   },
-}
+
+
 }
 
 

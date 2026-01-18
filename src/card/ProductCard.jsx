@@ -56,7 +56,7 @@ const ProductCard = ({ product }) => {
           </div>
 
           <Link 
-            href={`/products/${product.id}`} 
+            href={`/products/${product._id}`} 
             className="flex items-center justify-center bg-white text-black h-12 px-6 rounded-xl font-bold text-sm hover:bg-amber-500 hover:text-white transition-all duration-300 active:scale-95"
           >
             Details

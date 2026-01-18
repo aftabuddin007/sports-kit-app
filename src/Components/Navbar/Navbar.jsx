@@ -8,7 +8,7 @@ import { toast } from 'react-toastify';
 
 const Navbar = () => {
     const { data: session,status } = useSession()
-    console.log(session)
+    // console.log(session)
   const pathname = usePathname();
 const router = useRouter();
   const navLinkClass = (path) =>

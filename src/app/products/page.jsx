@@ -1,12 +1,26 @@
+
 import ProductCard from '@/card/ProductCard';
 import React from 'react';
-const getAllProduct = async ()=>{
-    // const res = await fetch('http://localhost:3000/data.json');
-    const res = await fetch('http://localhost:3000/api/addProduct');
-
-  const data = await res.json();
-  return data.addProd;
+const getAllProduct = async () => {
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/addProduct`, {
+      cache: 'no-store',
+    });
+    // console.log(res)
+    if (!res.ok) {
+      console.error(`API error: ${res.status}`);
+      return []; 
+    }
+    
+    const data = await res.json();
+    return data.addProd || [];
+  } catch (error) {
+    console.error('Error fetching products:', error);
+    return []; 
+  }
 };
+
+
 
 const Products = async() => {
     const item = await getAllProduct()

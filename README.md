@@ -7,7 +7,7 @@ The app focuses on providing a clean, fast, and responsive user experience with 
 
 ## 🔗 Live Links
 
-- 🌐 **Live Site:** https://your-live-site.vercel.app  
+- 🌐 **Live Site:** https://sports-kit-app.vercel.app
 
 
 

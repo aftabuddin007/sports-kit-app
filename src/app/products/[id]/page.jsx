@@ -1,20 +1,28 @@
 import React from 'react';
 
-const getSingleProd = async (id)=>{
-    const res = await fetch(`http://localhost:3000/api/addProduct`);
+const getSingleProd = async (id) => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER}/api/addProduct/${id}`, {
+    cache: "no-store",
+  });
 
   const data = await res.json();
-  const product = data.addProd.find((i)=>i.id === id)
-  
-  return product
 
-
-// 
+  return data.addProd; 
 };
-const ProductDetails =async ({params}) => {
-const {id} = await params;
-const product  =await getSingleProd(parseInt(id))
-// console.log( id,items)
+
+const ProductDetails = async ({ params }) => {
+  const { id } =await params;
+
+  const product = await getSingleProd(id);
+console.log(product)
+  if (!product) {
+    return (
+      <h2 className="text-center text-red-500 text-xl mt-10">
+        Product not found
+      </h2>
+    );
+  }
+// console.log( id,product)
     return (
         <div>
             <h2 className="text-2xl text-center my-4">Product details for {product.name}</h2>
